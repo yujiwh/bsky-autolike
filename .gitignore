@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Env & state & logs (private)
+.env
+*.log
+state*.json
+
+# OS/editor debris
+.DS_Store
+*.swp
