@@ -1,0 +1,15 @@
+[Unit]
+Description=Bluesky Auto-Like (followers) - %i
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/bsky-autolike
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/opt/bsky-autolike/.env
+Environment=BOT_ID=%i
+ExecStart=/usr/bin/python3 /opt/bsky-autolike/autolike.py
+User=root
+StandardOutput=journal
+StandardError=journal
